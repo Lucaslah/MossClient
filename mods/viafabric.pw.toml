@@ -1,0 +1,13 @@
+name = "ViaFabric"
+filename = "ViaFabric-0.4.12+55-dev.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/YlKdE5VK/versions/eAuT55f2/ViaFabric-0.4.12%2B55-dev.jar"
+hash-format = "sha1"
+hash = "42516f6abe4179d2333649c28cf34030480d021d"
+
+[update]
+[update.modrinth]
+mod-id = "YlKdE5VK"
+version = "eAuT55f2"

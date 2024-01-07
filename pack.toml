@@ -1,0 +1,16 @@
+name = "Moss Client"
+author = "Lucaslah"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "bdc852643ceda9274cbb73febc143d663bb5509474d42f05ff06145d3c84c221"
+
+[versions]
+minecraft = "1.20.4"
+quilt = "0.23.0"
+
+[options]
+acceptable-game-versions = ["1.20.1", "1.20.2", "1.20.3"]

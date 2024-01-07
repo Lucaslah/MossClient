@@ -1,0 +1,13 @@
+/build/
+
+# MossInit cache
+/scripts/.cache
+
+# Windows executable files
+*.exe
+
+# Exclude exported CurseForge zip files
+*.zip
+
+# Exclude exported Modrinth modpacks
+*.mrpack
