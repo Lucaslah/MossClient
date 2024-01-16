@@ -16,9 +16,9 @@ jobs:
         run: echo "BUILD_NUMBER=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
       - name: Update version
         run: |
-          current_version=$(grep -E '^version\s*=' pack.toml | awk -F\" '{print $2}')
+          current_version=$(grep -E '^version\s*=' pack/pack.toml | awk -F\" '{print $2}')
           new_version=$BUILD_NUMBER
-          sed -i "s/^version\s*=\s*\"$current_version\"/version = \"$new_version\"/" pack.toml
+          sed -i "s/^version\s*=\s*\"$current_version\"/version = \"$new_version\"/" pack/pack.toml
       - name: Build MrPack
         run: |
           chmod +x ./scripts/ci/build.sh
@@ -38,7 +38,8 @@ jobs:
       - name: Build Modlist
         shell: pwsh
         run: |
-          ./scripts/Moss.ps1 build all
+          $env:TEMP = "/tmp"
+          ./scripts/Moss.ps1 build mod-list
       - name: Upload Build Results
         uses: actions/upload-artifact@v3
         with:

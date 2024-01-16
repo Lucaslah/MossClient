@@ -32,7 +32,7 @@ jobs:
         shell: pwsh
         run: |
           $env:TEMP = "/tmp"
-          ./scripts/MossCli.ps1 Build-Mostlist
+          ./scripts/Moss.ps1 build mod-list
       - name: Upload Build Results
         uses: actions/upload-artifact@v3
         with:
