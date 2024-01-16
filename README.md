@@ -1,3 +1,7 @@
+<!-- modrinth_exclude.start -->
+
+<!--suppress HtmlDeprecatedAttribute -->
+
 <p align="center" style="display: block;margin-left: auto;margin-right: auto;margin-bottom: 0;">
     <img src="assets/moss256x256.png" alt="Moss Client Logo"/>
 </p>
@@ -11,8 +15,10 @@
     </a>
 </p>
 
+<!-- modrinth_exclude.end -->
+
 ## Overview
-> This is a recreation of Moss Client 1.19.4, updated to 1.20.4 and now using the modrinth platform
+This is a recreation of Moss Client 1.19.4, updated to 1.20.4 and now using the modrinth platform
 
 Moss Client is a client-sized modpack with optimizations and gameplay features.
 

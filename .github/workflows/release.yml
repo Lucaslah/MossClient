@@ -98,8 +98,14 @@ jobs:
           game-versions: ${{ env.RELEASE_MC_VERSION }}
       - name: Sync Modrinth Body
         run: |
+          mkdir .tmp
+          sed '/<!-- modrinth_exclude.start -->/,/<!-- modrinth_exclude.end -->/d' README.md > .tmp/modrinth-readme-p1.md
+          cat release/modrinth/modrinth-header.md .tmp/modrinth-readme-p1.md > .tmp/modrinth-readme-final.md
+          mv .tmp/modrinth-readme-final.md modrinth-readme.md
+          rm -rf .tmp
+
           curl -X PATCH \
             -H "Authorization: ${{ secrets.MODRINTH_TOKEN }}" \
             -H "Content-Type: application/json" \
-            --data-raw "$(jq -n --arg body "$(cat README.md)" '{body: $body}' | tr -d '\n')" \
+            --data-raw "$(jq -n --arg body "$(cat modrinth-readme.md)" '{body: $body}' | tr -d '\n')" \
             https://api.modrinth.com/v2/project/7FzUwEV3
