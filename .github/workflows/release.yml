@@ -27,6 +27,7 @@ jobs:
       - name: Build Modlist
         shell: pwsh
         run: |
+          $env:TEMP = "/tmp"
           ./scripts/MossCli.ps1 Build-Mostlist
       - name: Upload Build Results
         uses: actions/upload-artifact@v3
