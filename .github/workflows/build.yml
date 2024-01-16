@@ -20,10 +20,9 @@ jobs:
           new_version=$BUILD_NUMBER
           sed -i "s/^version\s*=\s*\"$current_version\"/version = \"$new_version\"/" pack.toml
       - name: Build MrPack
-        shell: pwsh
         run: |
-          $env:TEMP = "/tmp"
-          ./scripts/MossCli.ps1 Build-Mrpack
+          chmod +x ./scripts/linux/ci.sh
+          ./scripts/linux/ci.sh
       - name: Upload Build Results
         uses: actions/upload-artifact@v3
         with:

@@ -13,9 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build MrPack
-        shell: pwsh
         run: |
-          ./scripts/MossCli.ps1 Build-Mrpack
+          chmod +x ./scripts/linux/ci.sh
+          ./scripts/linux/ci.sh
       - name: Upload Build Results
         uses: actions/upload-artifact@v3
         with:
@@ -83,7 +83,7 @@ jobs:
           changelog=$(gh release view --json body --jq .body)
           echo "RELEASE_CHANGELOG=$changelog" >> $GITHUB_ENV
       - name: Publish to Modrinth
-        uses: Kir-Antipov/mc-publish@v3.3
+        uses: Kir-Antipov/mc-publish@v3.3.0
         with:
           modrinth-id: 7FzUwEV3
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
