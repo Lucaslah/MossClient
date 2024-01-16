@@ -8,6 +8,8 @@ on:
 jobs:
   build-mrpack:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v3
       - name: Build MrPack
@@ -22,6 +24,8 @@ jobs:
 
   build-modlist:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v3
       - name: Build Modlist
