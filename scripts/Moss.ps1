@@ -30,7 +30,10 @@ while ($true) {
             }
 
             Push-Location $targetLocation
-            Use-Packwiz "modrinth export --output build\MossClient.mrpack"
+
+            $version = (Get-Content -Path "$scriptLocation\..\pack.toml" | Select-String -Pattern '^version\s*=').ToString() -split '\"' | Select-Object -Index 1
+
+            Use-Packwiz "modrinth export --output build\MossClient-$version.mrpack"
             Pop-Location
 
             Pause

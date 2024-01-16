@@ -1,0 +1,93 @@
+name: Release
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  build-mrpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build MrPack
+        shell: pwsh
+        run: |
+          ./scripts/MossCli.ps1 Build-Mrpack
+      - name: Upload Build Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: MossClient-MrPack
+          path: build/*.mrpack
+
+  build-modlist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Modlist
+        shell: pwsh
+        run: |
+          ./scripts/MossCli.ps1 Build-Mostlist
+      - name: Upload Build Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: MossClient-Modlist
+          path: build/mods.html
+
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    needs: [build-mrpack, build-modlist]
+    steps:
+      - uses: actions/checkout@v3
+      - run: mkdir dist
+      - uses: actions/download-artifact@v3
+        with:
+          name: MossClient-MrPack
+          path: dist/modpack
+      - uses: actions/download-artifact@v3
+        with:
+          name: MossClient-Modlist
+          path: dist/html
+      - name: Create Release
+        run: |
+          pushd dist
+          shasum -a 256 * > checksums.txt
+          popd
+          
+          version=$(grep -oP 'version = "\K[^"]+' pack.toml)
+          minecraft=$(grep -oP 'minecraft = "\K[^"]+' pack.toml)
+          title="Moss Client ${version}"
+          
+          release_args=(
+            "$version"
+            --title "Moss Client ${version}"
+            --generate-notes
+          )
+
+          echo "RELEASE_TITLE=$title" >> $GITHUB_ENV
+          echo "RELEASE_VERSION=$version" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=release" >> $GITHUB_ENV
+          echo "RELEASE_MC_VERSION=$minecraft" >> $GITHUB_ENV
+          
+          gh release create "${release_args[@]}" ./dist/*
+
+          changelog=$(gh release view --json body --jq .body)
+          echo "RELEASE_CHANGELOG=$changelog" >> $GITHUB_ENV
+      - name: Publish to Modrinth
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: 7FzUwEV3
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+          files: dist/modpack/*.mrpack
+          name: ${{ env.RELEASE_TITLE }}
+          version: ${{ env.RELEASE_VERSION }}
+          version-type: ${{ env.RELEASE_CHANNEL }}
+          changelog: ${{ env.RELEASE_CHANGELOG }}
+
+          loaders: quilt
+          game-versions: ${{ env.RELEASE_MC_VERSION }}
