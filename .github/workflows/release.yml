@@ -14,8 +14,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build MrPack
         run: |
-          chmod +x ./scripts/linux/ci.sh
-          ./scripts/linux/ci.sh
+          chmod +x ./scripts/ci/build.sh
+          ./scripts/ci/build.sh
       - name: Upload Build Results
         uses: actions/upload-artifact@v3
         with:
@@ -96,3 +96,10 @@ jobs:
 
           loaders: quilt
           game-versions: ${{ env.RELEASE_MC_VERSION }}
+      - name: Sync Modrinth Body
+        run: |
+          curl -X PATCH \
+            -H "Authorization: ${{ secrets.MODRINTH_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data-raw "$(jq -n --arg body "$(cat README.md)" '{body: $body}' | tr -d '\n')" \
+            https://api.modrinth.com/v2/project/7FzUwEV3

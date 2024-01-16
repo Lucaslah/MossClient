@@ -1,55 +1,80 @@
-# Moss Init
+###
+# Moss build system
+#
+# This powershell script is a simple CLI for building Moss Client
+# Usage: .\Moss.ps1 build <module>
+###
+
+param (
+    [string]$action,
+    [string]$moduleType
+)
 
 $scriptLocation = $PSScriptRoot
+$validModuleTypes = @("mod-list", "mrpack", "all")
 
-# import packwiz
-. "$scriptLocation\PackwizLib.ps1"
-. "$scriptLocation\ModlistLib.ps1"
+###
+# Setup build result locations
+###
 
-function Show-Menu {
-    Clear-Host
-    Write-Host "=== Menu ==="
-    Write-Host "1. Build Modrinth (mrpack)"
-    Write-Host "2. Build Mod List (html)"
-    Write-Host "Q. Quit"
+$targetLocation = (Get-Item $scriptLocation).parent.FullName
+$outoutLocation = "$targetLocation\build"
+
+if (-not (Test-Path -Path $outoutLocation -PathType Container)) {
+    New-Item -Path $outoutLocation -ItemType Directory
 }
 
-while ($true) {
-    Show-Menu
-    $choice = Read-Host "Select an option"
+###
+# Setup source locations
+###
 
-    Switch ($choice) {
-        '1' {
-            Write-Host "Starting modrinth build..."
+$sourceLocation = "$targetLocation\pack"
 
-            $targetLocation = (Get-Item $scriptLocation).parent.FullName
-            $outoutLocation = "$targetLocation\build"
+###
+# Setup build version
+###
 
-            if (-not (Test-Path -Path $outoutLocation -PathType Container)) {
-                New-Item -Path $outoutLocation -ItemType Directory
-            }
+$version = (Get-Content -Path "$sourceLocation\pack.toml" | Select-String -Pattern '^version\s*=').ToString() -split '\"' | Select-Object -Index 1
 
-            Push-Location $targetLocation
+###
+# Import powershell scripts to build the mod-list and mrpack for modrinth
+###
 
-            $version = (Get-Content -Path "$scriptLocation\..\pack.toml" | Select-String -Pattern '^version\s*=').ToString() -split '\"' | Select-Object -Index 1
+. "$scriptLocation\modules\PackwizLib.ps1"
+. "$scriptLocation\modules\ModlistLib.ps1"
 
-            Use-Packwiz "modrinth export --output build\MossClient-$version.mrpack"
-            Pop-Location
+function Build-Module {
+    param (
+        [string]$moduleType
+    )
 
-            Pause
-        }
-        '2' {
-            Write-Host "Starting mod list build..."
-            Get-Modlist
-            Pause
-        }
-        'Q' {
-            Write-Host "Goodbye from MossInit"
-            return
-        }
-        default {
-            Write-Host "Invalid choice. Please try again."
-            Pause
-        }
+    Write-Host "Starting build for Moss Client version $version"
+    Write-Host "Building module: $moduleType"
+
+    if ($moduleType -eq "mod-list") {
+        Use-BuildModlist($targetLocation)
+    } elseif ($moduleType -eq "mrpack") {
+        Use-BuildMrpack($targetLocation)
+    } elseif ($moduleType -eq "all") {
+        Use-BuildMrpack($targetLocation)
+        Use-BuildModlist($targetLocation)
     }
+}
+
+function Show-Help {
+    Write-Host "Usage: .\Moss.ps1 build <module>"
+    Write-Host "Supported modules: $($validModuleTypes -join ', ')"
+}
+
+if ($action -eq "build") {
+    if ($validModuleTypes -contains $moduleType) {
+        Build-Module -moduleType $moduleType
+    } else {
+        Write-Host "Invalid module type. Supported types: $($validModuleTypes -join ', ')"
+        exit 1
+    }
+} elseif ($action -eq "help") {
+    Show-Help
+} else {
+    Write-Host "Invalid action. Supported actions: build, help"
 }

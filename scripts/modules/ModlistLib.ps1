@@ -1,7 +1,9 @@
-function Get-Modlist {
-    $scriptLocation = $PSScriptRoot
-    $targetLocation = (Get-Item $scriptLocation).parent.FullName
-    $modsPath = "$targetLocation\mods"
+function Use-BuildModlist {
+    param(
+        [string]$targetLocation
+    )
+
+    $modsPath = "$targetLocation\pack\mods"
     $outputPath = "$targetLocation\build\mods.html"
     $buildPath = "$targetLocation\build"
 

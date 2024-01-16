@@ -21,8 +21,8 @@ jobs:
           sed -i "s/^version\s*=\s*\"$current_version\"/version = \"$new_version\"/" pack.toml
       - name: Build MrPack
         run: |
-          chmod +x ./scripts/linux/ci.sh
-          ./scripts/linux/ci.sh
+          chmod +x ./scripts/ci/build.sh
+          ./scripts/ci/build.sh
       - name: Upload Build Results
         uses: actions/upload-artifact@v3
         with:
@@ -38,7 +38,7 @@ jobs:
       - name: Build Modlist
         shell: pwsh
         run: |
-          ./scripts/MossCli.ps1 Build-Mostlist
+          ./scripts/Moss.ps1 build all
       - name: Upload Build Results
         uses: actions/upload-artifact@v3
         with:
