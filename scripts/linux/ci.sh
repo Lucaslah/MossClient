@@ -8,11 +8,13 @@ packpiz_location="$cache_path/packwiz"
 
 if [ -e "$packpiz_location" ]; then
     echo "Found packwiz at: $packpiz_location"
+    chmod +x "$packpiz_location"
 else
     echo "Packwiz not found... Downloading..."
     gh run download --repo packwiz/packwiz --name "Linux 64-bit x86" --dir "$cache_path/.dl"
     mv "$cache_path/.dl/packwiz" "$packpiz_location"
     rm -rf "$cache_path/.dl"
+    chmod +x "$packpiz_location"
 fi
 
 run_packwiz_cmd() {
