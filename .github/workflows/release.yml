@@ -88,7 +88,7 @@ jobs:
           modrinth-id: 7FzUwEV3
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
 
-          files: dist/modpack/*.mrpack
+          files: dist/*.mrpack
           name: ${{ env.RELEASE_TITLE }}
           version: ${{ env.RELEASE_VERSION }}
           version-type: ${{ env.RELEASE_CHANNEL }}
