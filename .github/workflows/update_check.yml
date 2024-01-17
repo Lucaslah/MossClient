@@ -56,7 +56,7 @@ jobs:
 
           IFS=$'\n'
           for FILE in $(git diff --name-only $LATEST_COMMIT_MAIN $LATEST_COMMIT); do
-            if [[ $FILE == *.toml ]]; then
+            if [[ $FILE == *.pw.toml ]]; then
                 BEFORE_CONTENT=$(git show $LATEST_COMMIT_MAIN:$FILE)
                 AFTER_CONTENT=$(git show $LATEST_COMMIT:$FILE)
 
