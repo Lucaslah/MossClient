@@ -52,11 +52,11 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: MossClient-MrPack
-          path: dist/modpack
+          path: dist
       - uses: actions/download-artifact@v3
         with:
           name: MossClient-Modlist
-          path: dist/html
+          path: dist
       - name: Create Release
         run: |
           pushd dist
