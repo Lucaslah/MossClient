@@ -63,8 +63,8 @@ jobs:
           shasum -a 256 * > checksums.txt
           popd
           
-          version=$(grep -oP 'version = "\K[^"]+' pack.toml)
-          minecraft=$(grep -oP 'minecraft = "\K[^"]+' pack.toml)
+          version=$(grep -oP 'version = "\K[^"]+' pack/pack.toml)
+          minecraft=$(grep -oP 'minecraft = "\K[^"]+' pack/pack.toml)
           title="Moss Client ${version}"
           
           release_args=(
