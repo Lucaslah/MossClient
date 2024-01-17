@@ -1,0 +1,80 @@
+name: Check for updates
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 1'
+
+jobs:
+  check-for-updates:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+      - run: chmod +x ./scripts/ci/check-for-updates.sh
+      - name: Check for updates from modrinth
+        run: ./scripts/ci/check-for-updates.sh
+      - name: Check for changes
+        id: check_changes
+        run: |
+            CHANGES=$(git diff --name-only)
+            if [ -n "$CHANGES" ]; then
+              echo "Changes detected. Creating a new branch and committing changes..."
+              git config --local user.email "actions@github.com"
+              git config --local user.name "GitHub Actions"
+              BRANCH_NAME="auto-update-$(date '+%Y%m%d%H%M%S')"
+              git checkout -b $BRANCH_NAME
+              git add .
+              git commit -m "Update mods from modrinth"
+              echo "::set-output name=branch_name::$BRANCH_NAME"
+            else
+              echo "No changes detected."
+              echo "::set-output name=branch_name::"
+            fi
+          
+      - name: Push changes and branch
+        if: steps.check_changes.outputs.branch_name != ''
+        run: |
+            git push origin ${{ steps.check_changes.outputs.branch_name }}
+          
+      - name: Open PR
+        if: steps.check_changes.outputs.branch_name != ''
+        run: |
+          TITLE="Automated PR: Updates are available"
+          BODY="### Mod updates are available.\n"
+          BODY+="\n| File | Mod | Version | Hash |"
+          BODY+="\n|------|-----|---------|------|"
+
+          LATEST_COMMIT=$(git rev-parse ${{ steps.check_changes.outputs.branch_name }})
+          LATEST_COMMIT_MAIN=$(git rev-parse main)
+
+          IFS=$'\n'
+          for FILE in $(git diff --name-only $LATEST_COMMIT_MAIN $LATEST_COMMIT); do
+            if [[ $FILE == *.pw.toml ]]; then
+                BEFORE_CONTENT=$(git show $LATEST_COMMIT_MAIN:$FILE)
+                AFTER_CONTENT=$(git show $LATEST_COMMIT:$FILE)
+
+                BEFORE_VERSION=$(echo "$BEFORE_CONTENT" | grep '^version\s*=' | sed -e 's/^[[:space:]]*version[[:space:]]*=[[:space:]]*"\(.*\)".*$/\1/')
+                AFTER_VERSION=$(echo "$AFTER_CONTENT" | grep '^version\s*=' | sed -e 's/^[[:space:]]*version[[:space:]]*=[[:space:]]*"\(.*\)".*$/\1/')
+
+                BEFORE_HASH=$(echo "$BEFORE_CONTENT" | grep '^hash\s*=' | sed -e 's/^[[:space:]]*hash[[:space:]]*=[[:space:]]*"\(.*\)".*$/\1/')
+                AFTER_HASH=$(echo "$AFTER_CONTENT" | grep '^hash\s*=' | sed -e 's/^[[:space:]]*hash[[:space:]]*=[[:space:]]*"\(.*\)".*$/\1/')
+                
+                MOD_NAME=$(echo "$BEFORE_CONTENT" | grep '^name\s*=' | sed -e 's/^[[:space:]]*name[[:space:]]*=[[:space:]]*"\(.*\)".*$/\1/')
+
+                if [ "$BEFORE_VERSION" != "$AFTER_VERSION" ]; then
+                    BODY+="\n- File: $FILE\n  Version changed from $BEFORE_VERSION to $AFTER_VERSION"
+                    BODY+="\n| $FILE | $MOD_NAME | $BEFORE_VERSION → $AFTER_VERSION | $BEFORE_HASH → $AFTER_HASH |"
+                fi
+            fi
+          done
+          
+          BODY=$(echo -e "$BODY")
+
+          gh pr create --base main --head ${{ steps.check_changes.outputs.branch_name }} --title "$TITLE" --body "$BODY"

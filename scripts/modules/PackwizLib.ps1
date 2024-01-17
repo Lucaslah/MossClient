@@ -19,11 +19,13 @@
 #>
 function Use-Packwiz {
     param (
+        [string]$location,
         [array] $arguments
     )
 
-    $scriptLocation = $PSScriptRoot
-    $cacheLocation = "$scriptLocation\.cache"
+    Push-Location $location
+
+    $cacheLocation = "$location\..\scripts\.cache"
 
     # First check for packwiz in cache location
     if (Test-Path "$cacheLocation\packwiz.exe" -PathType Leaf) {
@@ -66,8 +68,18 @@ function Use-Packwiz {
                 $command = "& `"$cacheLocation\packwiz.exe`" $($arguments -join ' ')"
                 Invoke-Expression $command
             } else {
-                throw "MossInit failed to locate or download packwiz, please install packwiz or the GitHub CLI (make sure to login with gh auth login)"
+                throw "Moss failed to locate or download packwiz, please install packwiz or the GitHub CLI (make sure to login with gh auth login)"
             }
         }
     }
+
+    Pop-Location
+}
+
+function Use-BuildMrpack {
+    param(
+        [string]$location
+    )
+
+    Use-Packwiz("$location\pack") "modrinth export --output ..\build\MossClient-$version.mrpack"
 }

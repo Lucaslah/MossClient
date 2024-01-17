@@ -167,7 +167,7 @@ metafile = true
 
 [[files]]
 file = "mods/dynamic-fps.pw.toml"
-hash = "3c74be6e3f141680170ab0235cf272db65d5bf82ddbf99f9cbdc178fffc9a735"
+hash = "17cb1c44cbc5486f3eedf1e4de4c48c29a4f8cd8282ff757e64c0b6f3b964dd6"
 metafile = true
 
 [[files]]
@@ -182,7 +182,7 @@ metafile = true
 
 [[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "8ad92515a4d70ba75d0affea314f19274faf06344c835a1b59d21724d011fb34"
+hash = "25b087e635ab907f000d598b9a6279cc11a2c740063bf10be3adb175104dc23d"
 metafile = true
 
 [[files]]
@@ -237,7 +237,7 @@ metafile = true
 
 [[files]]
 file = "mods/multiplayer-server-pause.pw.toml"
-hash = "12359c0162ebf56a9494daf83a4b1f193447af8d5bde0628c17d195f7b233010"
+hash = "a29b92c24c6a7d35e211056e7b924c1b2b5b076705f7d4c5df305cb068a928da"
 metafile = true
 
 [[files]]
@@ -257,7 +257,7 @@ metafile = true
 
 [[files]]
 file = "mods/owo-lib.pw.toml"
-hash = "544c3f52ee5bc050074ab01908485bf2a4d771171e2d706a641c929598968c22"
+hash = "e92727fdfed28a3b21b38ff0fdba3edae6c4a830a84f7c68f12da18db52af060"
 metafile = true
 
 [[files]]
@@ -267,7 +267,7 @@ metafile = true
 
 [[files]]
 file = "mods/shulkerboxtooltip.pw.toml"
-hash = "ef8bedeb72d8ea0df446ec82cfc645727fee3a38d0e766193ad7158856a41f6d"
+hash = "aeaf48a21a5898ad70b40aebafc0f6654becb335353d76d57532e2f37a8021ea"
 metafile = true
 
 [[files]]
@@ -312,7 +312,7 @@ metafile = true
 
 [[files]]
 file = "mods/xaeroplus.pw.toml"
-hash = "35a3421fa2fdd808225307a8d5cc120180ef09dc2928c735a7c0b8ba25b20e08"
+hash = "7bc1ffc38f1d05063642bea99c14f701105e6d52bba7ced9ab64c3ac6119bca1"
 metafile = true
 
 [[files]]

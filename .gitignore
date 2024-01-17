@@ -11,3 +11,9 @@
 
 # Exclude exported Modrinth modpacks
 *.mrpack
+
+# Jetbrians IDE
+.idea
+
+# Visual Studio Code
+.vscode

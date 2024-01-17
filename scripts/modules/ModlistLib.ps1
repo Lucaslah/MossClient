@@ -1,8 +1,11 @@
-function Get-Modlist {
-    $scriptLocation = $PSScriptRoot
-    $targetLocation = (Get-Item $scriptLocation).parent.FullName
-    $modsPath = "$targetLocation\mods"
+function Use-BuildModlist {
+    param(
+        [string]$targetLocation
+    )
+
+    $modsPath = "$targetLocation\pack\mods"
     $outputPath = "$targetLocation\build\mods.html"
+    $buildPath = "$targetLocation\build"
 
     $list = New-Object System.Collections.ArrayList
 
@@ -35,6 +38,11 @@ function Get-Modlist {
 </body>
 </html>
 "@
+
+    if (-not (Test-Path -Path $buildPath -PathType Container)) {
+        New-Item -Path $buildPath -ItemType Directory
+        Write-Host "Directory created: $buildPath"
+    }
 
     $htmlContent | Set-Content -Path "$outputPath"
 
