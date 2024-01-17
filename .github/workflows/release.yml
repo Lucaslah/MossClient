@@ -80,7 +80,7 @@ jobs:
           
           gh release create "${release_args[@]}" ./dist/*
 
-          changelog=$(gh release view --json body --jq .body)
+          changelog=$(gh release view --json body --jq .body | tr -d '\n')
           echo "RELEASE_CHANGELOG=$changelog" >> $GITHUB_ENV
       - name: Publish to Modrinth
         uses: Kir-Antipov/mc-publish@v3.3.0
