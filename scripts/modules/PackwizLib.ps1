@@ -23,7 +23,9 @@ function Use-Packwiz {
         [array] $arguments
     )
 
-    $cacheLocation = "$location\scripts\.cache"
+    Push-Location $location
+
+    $cacheLocation = "$location\..\scripts\.cache"
 
     # First check for packwiz in cache location
     if (Test-Path "$cacheLocation\packwiz.exe" -PathType Leaf) {
@@ -70,6 +72,8 @@ function Use-Packwiz {
             }
         }
     }
+
+    Pop-Location
 }
 
 function Use-BuildMrpack {
@@ -77,9 +81,5 @@ function Use-BuildMrpack {
         [string]$location
     )
 
-    $targetLocation = "$location\pack"
-
-    Push-Location $targetLocation
-    Use-Packwiz($targetLocation) "modrinth export --output ..\build\MossClient-$version.mrpack"
-    Pop-Location
+    Use-Packwiz("$location\pack") "modrinth export --output ..\build\MossClient-$version.mrpack"
 }

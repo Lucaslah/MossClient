@@ -5,5 +5,6 @@
 
 $scriptLocation = $PSScriptRoot
 . "$scriptLocation\modules\PackwizLib.ps1"
+$targetLocation = (Get-Item $scriptLocation).parent.FullName
 $arguments = $args -join ' '
-Use-Packwiz $arguments
+Use-Packwiz "$targetLocation\pack" $arguments
