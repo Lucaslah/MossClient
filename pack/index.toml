@@ -106,7 +106,7 @@ hash = "1dcee38470c2939f7265891203775b7631c81822bf2506a451727fcaaf2cc4a2"
 
 [[files]]
 file = "config/xaerominimap.txt"
-hash = "accc716994197eccd3a268170acfa6329d68f38efbb0d37abcff802070313f8e"
+hash = "33de8f16836c8c59e5ea321fb24c2ea65c62c67852461c3901c25745859ebf9f"
 
 [[files]]
 file = "config/xaerominimap_entities.json"
@@ -150,6 +150,11 @@ hash = "7d3b0183e9e2f58cacbd4cd348c02219033539502094e45ac13f392f1ebfda3e"
 metafile = true
 
 [[files]]
+file = "mods/calcmod.pw.toml"
+hash = "c85c3e680af7e30e2379956a67bd8b0f5d424390f7a130f507143ec4984cc6cd"
+metafile = true
+
+[[files]]
 file = "mods/chatanimation.pw.toml"
 hash = "c66ca4fd2b94b0ed0cb3002040839aefcb71a8fd08f2dc3337e61f2e4ce28cf9"
 metafile = true
@@ -160,6 +165,11 @@ hash = "f250d6778f5b8d03ca32913bea5ea677508e9bb6d8201cdebe005bbe9c3100ee"
 metafile = true
 
 [[files]]
+file = "mods/clumps.pw.toml"
+hash = "1bfa978c09e27a1b064119a8ebe53083f63abc3625055f49f0f086a64c0222bb"
+metafile = true
+
+[[files]]
 file = "mods/completeconfig.pw.toml"
 hash = "debab1b6732fce31b240d311d86b441329ba46aae132c9f236af1fe90af00d94"
 metafile = true
@@ -167,6 +177,11 @@ metafile = true
 [[files]]
 file = "mods/continuity.pw.toml"
 hash = "ab1c014ce67654e89af779137bdfd1f6f22888af218f44cf5d83e943d0d5fbc4"
+metafile = true
+
+[[files]]
+file = "mods/controlling.pw.toml"
+hash = "a659fc922dfbcbb29bad2bbc11dd34cb1686c3c9cde9a93fe484db0f4e4c3062"
 metafile = true
 
 [[files]]
@@ -265,11 +280,6 @@ hash = "e25ba511d2cf8304616074a3d06d709870477b7886dbcb630136673942e8fa62"
 metafile = true
 
 [[files]]
-file = "mods/nether-coords.pw.toml"
-hash = "2f53001aff03850a0632093a32b8c08b76950f5c717dabc769b8bfcb3838034b"
-metafile = true
-
-[[files]]
 file = "mods/no-chat-reports.pw.toml"
 hash = "a045df0a5d03ef89d92ca9318aa42a5a5e7617b37dd38d32b0a7058c0f6f4ef7"
 metafile = true
@@ -287,6 +297,16 @@ metafile = true
 [[files]]
 file = "mods/qkl.pw.toml"
 hash = "47217cc1489533f668d622f2078351a61873be573311a9a94be7293328a849a7"
+metafile = true
+
+[[files]]
+file = "mods/replaymod.pw.toml"
+hash = "903f4ea7710300492e2f8cf1b98b59f1cdf0e1a4ecd25d2b3761dd23f0904d10"
+metafile = true
+
+[[files]]
+file = "mods/searchables.pw.toml"
+hash = "9826c6020d1498b3c80d825f6ad272234c201b3ace8fb862e2aeebd7bb45fb74"
 metafile = true
 
 [[files]]
