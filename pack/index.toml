@@ -150,6 +150,11 @@ hash = "7d3b0183e9e2f58cacbd4cd348c02219033539502094e45ac13f392f1ebfda3e"
 metafile = true
 
 [[files]]
+file = "mods/chatanimation.pw.toml"
+hash = "c66ca4fd2b94b0ed0cb3002040839aefcb71a8fd08f2dc3337e61f2e4ce28cf9"
+metafile = true
+
+[[files]]
 file = "mods/cloth-config.pw.toml"
 hash = "f250d6778f5b8d03ca32913bea5ea677508e9bb6d8201cdebe005bbe9c3100ee"
 metafile = true
@@ -200,8 +205,18 @@ hash = "4146027b92b4885fddec00435233c61c3728b5e09265982ab187021519a4fa89"
 metafile = true
 
 [[files]]
+file = "mods/forcecloseworldloadingscreen.pw.toml"
+hash = "f887b988eab34f06e2c1ddc8c61e04824301262d5e366e4c6f482f673bc9b143"
+metafile = true
+
+[[files]]
 file = "mods/gamma-utils.pw.toml"
 hash = "e2f157f2434341292e705022f597411ba2be3a86f1f7cf7a24a3c759123043b8"
+metafile = true
+
+[[files]]
+file = "mods/immediatelyfast.pw.toml"
+hash = "c4afda1d505225ad18e689ded06f0ed170dec2ea5e6c9621277b565d0fc338b8"
 metafile = true
 
 [[files]]
@@ -280,6 +295,11 @@ hash = "aeaf48a21a5898ad70b40aebafc0f6654becb335353d76d57532e2f37a8021ea"
 metafile = true
 
 [[files]]
+file = "mods/sodium-extra.pw.toml"
+hash = "ebe386eef0fb117e3bc3252786fbca4b3f05e45eb2cc8e2f56549aad396d244f"
+metafile = true
+
+[[files]]
 file = "mods/sodium.pw.toml"
 hash = "582b585d4bcb3bc316e0451a3c46a869d0b2f120598df12bd339bae2a68c5734"
 metafile = true
@@ -351,7 +371,7 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "48c9a63ef530bacc16a05156728dd5683c6c0682ebfd09c64ad46960292aaaee"
+hash = "7912415a171148c1ebf60fed7488925aaac6706b299c7b25e247da7341916a43"
 
 [[files]]
 file = "shaderpacks/bsl-shaders.pw.toml"
