@@ -186,7 +186,7 @@ metafile = true
 
 [[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "25b087e635ab907f000d598b9a6279cc11a2c740063bf10be3adb175104dc23d"
+hash = "eb7d18a31cda57ad548a95090da961b68360b8ff8387370a054635279fea0604"
 metafile = true
 
 [[files]]
@@ -241,7 +241,7 @@ metafile = true
 
 [[files]]
 file = "mods/multiplayer-server-pause.pw.toml"
-hash = "a29b92c24c6a7d35e211056e7b924c1b2b5b076705f7d4c5df305cb068a928da"
+hash = "e25ba511d2cf8304616074a3d06d709870477b7886dbcb630136673942e8fa62"
 metafile = true
 
 [[files]]
@@ -261,7 +261,7 @@ metafile = true
 
 [[files]]
 file = "mods/owo-lib.pw.toml"
-hash = "e92727fdfed28a3b21b38ff0fdba3edae6c4a830a84f7c68f12da18db52af060"
+hash = "35ee262c6aac2d1cb22f741f29189bbb1f6a90cf7a7ee9aa8687042314667386"
 metafile = true
 
 [[files]]
@@ -341,7 +341,7 @@ metafile = true
 
 [[files]]
 file = "mods/zoomify.pw.toml"
-hash = "1f77901c1b32849c704d8dbd0cd3aefc47e36a63b718fa92708ab73a3a529d89"
+hash = "7005e926a32cfe6e1191ea0da9f65635e28f9dec4d827044c43da622697ba9c2"
 metafile = true
 
 [[files]]
