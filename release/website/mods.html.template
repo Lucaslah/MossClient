@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Moss Client</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <p align="center" style="display: block;margin-left: auto;margin-right: auto;">
+            <img class="rounded-image" src="https://raw.githubusercontent.com/Lucaslah/MossClient/master/assets/moss256x256.png" alt="Moss Client Logo"/>
+        </p>
+        
+        <h1 align="center" style="margin-top: 0;margin-bottom: 0">Moss Client</h1>
+        <p align="center" style="margin-top: 0;">Minecraft client-side modpack for Quilt with useful features and optimizations</p>
+
+        <p align="center">
+            <a href="https://modrinth.com/mod/moss-client">
+                <img src="https://img.shields.io/modrinth/dt/7FzUwEV3?logo=Modrinth" alt="modrinth-downloads">
+            </a>
+        </p>
+
+        <p align="center">
+            <a class="button" href="index.html" rel="noopener noreferrer">
+                Back
+            </a>
+        </p>
+
+        <div class="list-container">
+            <!-- MOD_LIST_BUILD_RESULT -->
+        </div>
+    </body>
+</html>

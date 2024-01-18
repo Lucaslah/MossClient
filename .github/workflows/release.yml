@@ -10,12 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
+      MOSS_ENABLED_MODULES: mrpack
     steps:
       - uses: actions/checkout@v3
       - name: Build MrPack
         run: |
-          chmod +x ./scripts/ci/build.sh
-          ./scripts/ci/build.sh
+          chmod +x moss.sh
+          ./moss.sh
       - name: Upload Build Results
         uses: actions/upload-artifact@v3
         with:
@@ -26,18 +27,20 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
+      MOSS_ENABLED_MODULES: mljson,mlhtml
     steps:
       - uses: actions/checkout@v3
       - name: Build Modlist
-        shell: pwsh
         run: |
-          $env:TEMP = "/tmp"
-          ./scripts/Moss.ps1 build mod-list
+         chmod +x moss.sh
+         ./moss.sh
       - name: Upload Build Results
         uses: actions/upload-artifact@v3
         with:
           name: MossClient-Modlist
-          path: build/mods.html
+          path: |
+            build/*.html
+            build/*.json
 
   release:
     runs-on: ubuntu-latest
@@ -109,3 +112,30 @@ jobs:
             -H "Content-Type: application/json" \
             --data-raw "$(jq -n --arg body "$(cat modrinth-readme.md)" '{body: $body}' | tr -d '\n')" \
             https://api.modrinth.com/v2/project/7FzUwEV3
+  release-website:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    needs: [build-modlist]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+      - uses: actions/download-artifact@v3
+        with:
+          name: MossClient-Modlist
+          path: build
+      - name: Update mods
+        run: |
+          rm mods.html
+          cp build/mods.html .
+          rm -rf build
+      - name: Publish
+        run:
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add .
+          git commit -m "Sync mod-list with release"
+          git push origin gh-pages
