@@ -13,6 +13,13 @@ jobs:
       MOSS_ENABLED_MODULES: mrpack
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: |
+            .cache
+          key: ${{ runner.os }}-packwiz
+          restore-keys: |
+            ${{ runner.os }}-packwiz
       - name: Build MrPack
         run: |
           chmod +x moss.sh
