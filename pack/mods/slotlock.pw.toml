@@ -1,0 +1,7 @@
+name = "slotlock"
+filename = "slotlock-1.1.1-BETA+1.20.4.jar"
+
+[download]
+url = "https://github.com/Lucaslah/slotlock/releases/download/1.1.1%2B1.20.4/slotlock-1.1.1-BETA+1.20.4.jar"
+hash-format = "sha256"
+hash = "e8d1261a28b202007c7422ac9bb16290c025f0710599e373625a670c1162af0a"

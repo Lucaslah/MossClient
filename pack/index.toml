@@ -170,6 +170,11 @@ hash = "1bfa978c09e27a1b064119a8ebe53083f63abc3625055f49f0f086a64c0222bb"
 metafile = true
 
 [[files]]
+file = "mods/compact-chat.pw.toml"
+hash = "806d01e9d578e619dfad0e14301ab71c05a0fd381cd5bcb10a5aecfb9c408698"
+metafile = true
+
+[[files]]
 file = "mods/completeconfig.pw.toml"
 hash = "debab1b6732fce31b240d311d86b441329ba46aae132c9f236af1fe90af00d94"
 metafile = true
@@ -312,6 +317,11 @@ metafile = true
 [[files]]
 file = "mods/shulkerboxtooltip.pw.toml"
 hash = "aeaf48a21a5898ad70b40aebafc0f6654becb335353d76d57532e2f37a8021ea"
+metafile = true
+
+[[files]]
+file = "mods/slotlock.pw.toml"
+hash = "18c651cd74c1ef68707853b0d53e77a1aa219f19c423d906d7d5ffeb766e7d0b"
 metafile = true
 
 [[files]]
