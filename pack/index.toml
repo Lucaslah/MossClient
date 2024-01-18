@@ -93,6 +93,10 @@ file = "config/status-effect-bars.json"
 hash = "9d6b9cee844e073d40de18fdfb268c267978a3cb0e64f1d1f17f79e6bf688a70"
 
 [[files]]
+file = "config/timeless.json"
+hash = "4df52ad15efc777b8f382279198b83954d1e30cd9ff1cbf3c41976c0a6646505"
+
+[[files]]
 file = "config/worldeditcui.config.json"
 hash = "862eb44e855b5ff872006933278eaf6c17c04c4cb56c6a90f7e2b1c232a2920b"
 
@@ -288,6 +292,11 @@ metafile = true
 [[files]]
 file = "mods/status-effect-bars.pw.toml"
 hash = "7f148daee130716f4c5160113e635a6d067c28944994f84d2471beba4d9c2842"
+metafile = true
+
+[[files]]
+file = "mods/timeless.pw.toml"
+hash = "b128bc80a1272f998428c43564e98ae49e6ba80f1eda141d13a973079a3de364"
 metafile = true
 
 [[files]]
