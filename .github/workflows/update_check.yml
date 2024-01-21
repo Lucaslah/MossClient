@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: master
+          ref: develop
       - run: chmod +x ./scripts/ci/check-for-updates.sh
       - name: Check for updates from modrinth
         run: ./scripts/ci/check-for-updates.sh
@@ -77,4 +77,4 @@ jobs:
           
           BODY=$(echo -e "$BODY")
 
-          gh pr create --base master --head ${{ steps.check_changes.outputs.branch_name }} --title "$TITLE" --body "$BODY"
+          gh pr create --base develop --head ${{ steps.check_changes.outputs.branch_name }} --title "$TITLE" --body "$BODY"
