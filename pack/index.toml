@@ -216,7 +216,7 @@ metafile = true
 
 [[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "eb7d18a31cda57ad548a95090da961b68360b8ff8387370a054635279fea0604"
+hash = "fefedc3157d0dc6d05af2ed8ae6fc0549a6011362ac2170f7b1115d5f73ca95b"
 metafile = true
 
 [[files]]
@@ -281,7 +281,7 @@ metafile = true
 
 [[files]]
 file = "mods/multiplayer-server-pause.pw.toml"
-hash = "e25ba511d2cf8304616074a3d06d709870477b7886dbcb630136673942e8fa62"
+hash = "379447cc0778c0ac7bbffd0510ad89418f973de7e27ba6801583e25cc64b7268"
 metafile = true
 
 [[files]]
@@ -296,7 +296,7 @@ metafile = true
 
 [[files]]
 file = "mods/owo-lib.pw.toml"
-hash = "35ee262c6aac2d1cb22f741f29189bbb1f6a90cf7a7ee9aa8687042314667386"
+hash = "7df4e9e2dcdae03cff43d5c0159b638f6b2eba53d3f9419a756facb0bcce4101"
 metafile = true
 
 [[files]]
@@ -391,7 +391,7 @@ metafile = true
 
 [[files]]
 file = "mods/yacl.pw.toml"
-hash = "2498a978634a0add18ebd0a47b4e8d23dbe8ac19d926fabf436d15ad94bd9a44"
+hash = "35604d51f362bbe912d84d8a43835c6b205fd51f8c655202ba1bf59aaaddab19"
 metafile = true
 
 [[files]]
