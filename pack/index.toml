@@ -365,6 +365,11 @@ hash = "3383fd41ab1fe7aba9b3ee1aa8025883f894158d0fa4a59a6f28d33e2559e922"
 metafile = true
 
 [[files]]
+file = "mods/weather-changer.pw.toml"
+hash = "e18068e8f160d6cddf4fc73f76b99ea0eb3bcbb522fbda281ffa4bf2f6040e8d"
+metafile = true
+
+[[files]]
 file = "mods/worldedit-cui.pw.toml"
 hash = "68557e8b0cd7bdf1015c3760d70841a876284d7f83b36bfea022a8612e8a393a"
 metafile = true
