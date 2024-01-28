@@ -159,7 +159,7 @@ jobs:
         with:
           ref: gh-pages
       - name: Install dependencies
-        run: yarn install --immutable --immutable-cache --check-cache
+        run: yarn install
       - name: Build
         run: yarn build
       - name: Setup Pages
