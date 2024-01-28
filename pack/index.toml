@@ -81,6 +81,10 @@ file = "config/modmenu.json"
 hash = "a048c5e3bc900e422f38e71f97db0ab61f046d727d8e9e13b49434186543c1aa"
 
 [[files]]
+file = "config/replaymod.json"
+hash = "fb32e1ea601ece56eb42a39e1074f4f290f0a30d267fabb262d46a343bd7ce9c"
+
+[[files]]
 file = "config/serverpause/serverpause.conf"
 hash = "6d94b23b46e32c2277db3616e0db86f828ca2d3fa5817e65d327ebe5b8e16919"
 
@@ -381,7 +385,7 @@ metafile = true
 
 [[files]]
 file = "mods/xaeroplus.pw.toml"
-hash = "7bc1ffc38f1d05063642bea99c14f701105e6d52bba7ced9ab64c3ac6119bca1"
+hash = "e8225028da3868661a459c005bdbdf650b227997babca9773e442ed2117b5e1e"
 metafile = true
 
 [[files]]
@@ -406,7 +410,7 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "7912415a171148c1ebf60fed7488925aaac6706b299c7b25e247da7341916a43"
+hash = "7896d228993ecebb09c9a84a6a7cbd47823d06af6a1aae6e92d9b2e2fbf0610b"
 
 [[files]]
 file = "shaderpacks/bsl-shaders.pw.toml"
