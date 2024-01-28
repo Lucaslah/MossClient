@@ -25,7 +25,7 @@ function Use-Packwiz {
 
     Push-Location $location
 
-    $cacheLocation = "$location\..\scripts\.cache"
+    $cacheLocation = "$location\..\.cache"
 
     # First check for packwiz in cache location
     if (Test-Path "$cacheLocation\packwiz.exe" -PathType Leaf) {

@@ -8,4 +8,4 @@ script_directory=$(dirname "$script_path")
 
 source "$script_directory/packwiz.sh"
 
-run_packwiz_cmd "update --all"
+run_packwiz_cmd "update --all --yes"

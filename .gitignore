@@ -1,7 +1,10 @@
 /build/
 
-# MossInit cache
+# MossPS cache
 /scripts/.cache
+
+# Moss cache
+.cache
 
 # Windows executable files
 *.exe

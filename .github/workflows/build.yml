@@ -10,19 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
+      MOSS_ENABLED_MODULES: mrpack
     steps:
       - uses: actions/checkout@v3
-      - name: Setup build number
-        run: echo "BUILD_NUMBER=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
-      - name: Update version
-        run: |
-          current_version=$(grep -E '^version\s*=' pack/pack.toml | awk -F\" '{print $2}')
-          new_version=$BUILD_NUMBER
-          sed -i "s/^version\s*=\s*\"$current_version\"/version = \"$new_version\"/" pack/pack.toml
+      - uses: actions/cache@v3
+        with:
+          path: |
+            .cache
+          key: ${{ runner.os }}-packwiz
+          restore-keys: |
+            ${{ runner.os }}-packwiz
       - name: Build MrPack
         run: |
-          chmod +x ./scripts/ci/build.sh
-          ./scripts/ci/build.sh
+          chmod +x moss.sh
+          ./moss.sh
       - name: Upload Build Results
         uses: actions/upload-artifact@v3
         with:
@@ -33,15 +34,17 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
+      MOSS_ENABLED_MODULES: mlraw
     steps:
       - uses: actions/checkout@v3
       - name: Build Modlist
-        shell: pwsh
         run: |
-          $env:TEMP = "/tmp"
-          ./scripts/Moss.ps1 build mod-list
+         chmod +x moss.sh
+         ./moss.sh
       - name: Upload Build Results
         uses: actions/upload-artifact@v3
         with:
           name: MossClient-Modlist
-          path: build/mods.html
+          path: |
+            build/*.html
+            build/*.txt
