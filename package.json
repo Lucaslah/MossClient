@@ -1,0 +1,24 @@
+{
+  "name": "moss-client-website",
+  "version": "1.0.0",
+  "description": "Moss Client Website",
+  "repository": "https://github.com/Lucaslah/MossClient.git",
+  "author": "Lucas Petrino <nsx1lucas@gmail.com>",
+  "license": "UNLICENSED",
+  "browserslist": ">0.3%, firefox >=2,chrome>=10,ios>=6",
+  "devDependencies": {
+    "@parcel/compressor-brotli": "^2.11.0",
+    "@parcel/compressor-gzip": "^2.11.0",
+    "@parcel/config-default": "^2.11.0",
+    "@parcel/core": "^2.11.0",
+    "@parcel/optimizer-cssnano": "^2.11.0",
+    "parcel": "^2.11.0",
+    "sharp": "^0.31.1"
+  },
+  "scripts": {
+    "start": "parcel src/index.html",
+    "serve": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "packageManager": "yarn@4.0.2"
+}
