@@ -5,6 +5,11 @@ on:
     branches: 
       - master
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-mrpack:
     runs-on: ubuntu-latest
@@ -112,7 +117,7 @@ jobs:
             -H "Content-Type: application/json" \
             --data-raw "$(jq -n --arg body "$(cat modrinth-readme.md)" '{body: $body}' | tr -d '\n')" \
             https://api.modrinth.com/v2/project/7FzUwEV3
-  release-website:
+  commit-website:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -129,8 +134,8 @@ jobs:
           path: build
       - name: Update mods
         run: |
-          rm mods.html
-          cp build/mods.html .
+          rm src/mods.html
+          cp build/mods.html src
           rm -rf build
       - name: Publish
         run:
@@ -139,3 +144,30 @@ jobs:
           git add .
           git commit -m "Sync mod-list with release"
           git push origin gh-pages
+  deploy-website:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false
+    needs: [commit-website]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+      - name: Install dependencies
+        run: yarn install --immutable --immutable-cache --check-cache
+      - name: Build
+        run: yarn build
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

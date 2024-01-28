@@ -216,7 +216,7 @@ metafile = true
 
 [[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "fefedc3157d0dc6d05af2ed8ae6fc0549a6011362ac2170f7b1115d5f73ca95b"
+hash = "daf2a7408eeeaf8439527b153d24f4ee60865d8e3e7b2e4e05d4d56ce0b1797f"
 metafile = true
 
 [[files]]
@@ -326,12 +326,12 @@ metafile = true
 
 [[files]]
 file = "mods/sodium-extra.pw.toml"
-hash = "ebe386eef0fb117e3bc3252786fbca4b3f05e45eb2cc8e2f56549aad396d244f"
+hash = "f7c09e537f9db67804dd7df6b8ba3a0cfb63429ad992a99e8f8faba33187ded2"
 metafile = true
 
 [[files]]
 file = "mods/sodium.pw.toml"
-hash = "582b585d4bcb3bc316e0451a3c46a869d0b2f120598df12bd339bae2a68c5734"
+hash = "ab1123243e4feacf2eebcbe8b75f67abea0cc2330e61197db899288c02bd89a0"
 metafile = true
 
 [[files]]
@@ -391,7 +391,7 @@ metafile = true
 
 [[files]]
 file = "mods/xaeros-world-map.pw.toml"
-hash = "32e5438512b7e4c4a4e2fb6346a00e4346702bbea3a0030a108eecb3f7e3f261"
+hash = "c221c7e3d2c901242f279217bcea3e200b2191a3a64c1e3a82a265a15ca38bf4"
 metafile = true
 
 [[files]]
@@ -410,7 +410,7 @@ hash = "7912415a171148c1ebf60fed7488925aaac6706b299c7b25e247da7341916a43"
 
 [[files]]
 file = "shaderpacks/bsl-shaders.pw.toml"
-hash = "107b8b43e9fdd45cc38780875db8e4b976fadacc261f45cb39addd4e0ddb576a"
+hash = "aa9dc0d84028c1f3172219af7edd55590f5c98a69ef41dc72a2f2c57fc4de704"
 metafile = true
 
 [[files]]
