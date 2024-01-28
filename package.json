@@ -18,7 +18,7 @@
   "scripts": {
     "start": "parcel src/index.html",
     "serve": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html --public-url ./"
   },
   "packageManager": "yarn@4.0.2"
 }
