@@ -139,11 +139,11 @@ jobs:
           rm -rf build
       - name: Publish
         run:
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git add .
           git commit -m "Sync mod-list with release"
-          git push origin gh-pages
+          git push
   deploy-website:
     environment:
       name: github-pages
