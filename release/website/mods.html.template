@@ -11,7 +11,12 @@
 
     <body>
         <p style="display: block;margin-left: auto;margin-right: auto;">
-            <img class="rounded-image" src="moss256x256.png" alt="Moss Client Logo"/>
+            <picture>
+                <source srcset="moss256x256.png?as=avif&width=256" type="image/avif" />
+                <source srcset="moss256x256.png?as=webp&width=256" type="image/webp" />
+                <source srcset="moss256x256.png?width=256" type="image/jpeg" />
+                <img class="rounded-image" src="moss256x256.png?width=256" alt="Moss Client Logo" width="256" height="256" />
+            </picture>
         </p>
         
         <h1 style="margin-top: 0;margin-bottom: 0">Moss Client</h1>
