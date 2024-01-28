@@ -1,7 +1,7 @@
 name = "XaeroPlus"
-filename = "XaeroPlus-Fabric-1.20.4-4-WM1.37.7-MM23.9.7.jar"
+filename = "XaeroPlus-Fabric-1.20.4-2-WM1.37.6-MM23.9.6.jar"
 
 [download]
-url = "https://github.com/Lucaslah/XaeroPlus/releases/download/Fabric-1.20.4-4/XaeroPlus-Fabric-1.20.4-4-WM1.37.7-MM23.9.7.jar"
+url = "https://github.com/Lucaslah/XaeroPlus/releases/download/Fabric-1.20.4-2/XaeroPlus-Fabric-1.20.4-2-WM1.37.6-MM23.9.6.jar"
 hash-format = "sha256"
-hash = "65a5fa4c4ebe87b26a02b98dfd990dd850c70a68a3a7eab215c6b4930cd113ad"
+hash = "e7e337a76a6dfff2619daaefdfd4ce4f0dc82f144d07dec184697bcf5926252f"
