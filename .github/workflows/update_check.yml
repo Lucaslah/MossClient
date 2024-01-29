@@ -17,6 +17,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: develop
+          fetch-depth: 0
       - run: chmod +x ./scripts/ci/check-for-updates.sh
       - name: Check for updates from modrinth
         run: ./scripts/ci/check-for-updates.sh
@@ -52,7 +53,7 @@ jobs:
           BODY+="\n|------|-----|---------|------|"
 
           LATEST_COMMIT=$(git rev-parse ${{ steps.check_changes.outputs.branch_name }})
-          LATEST_COMMIT_MAIN=$(git rev-parse master)
+          LATEST_COMMIT_MAIN=$(git rev-parse develop)
 
           IFS=$'\n'
           for FILE in $(git diff --name-only $LATEST_COMMIT_MAIN $LATEST_COMMIT); do

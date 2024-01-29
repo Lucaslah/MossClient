@@ -6,6 +6,6 @@ fi
 script_path=$(realpath "$0")
 script_directory=$(dirname "$script_path")
 
-source "$script_directory/packwiz.sh"
+source "$script_directory/packwiz-lib.sh"
 
 run_packwiz_cmd "update --all --yes"
