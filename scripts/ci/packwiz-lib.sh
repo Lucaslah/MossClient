@@ -1,7 +1,7 @@
 script_path=$(realpath "$0")
 script_directory=$(dirname "$script_path")
 cache_path="$script_directory/../../.cache"
-pack_location="$script_directory/../pack"
+pack_location="$script_directory/../../pack"
 pack_toml_path="$pack_location/pack.toml"
 
 packwiz_location="$cache_path/packwiz"
