@@ -70,7 +70,6 @@ jobs:
                 MOD_NAME=$(echo "$BEFORE_CONTENT" | grep '^name\s*=' | sed -e 's/^[[:space:]]*name[[:space:]]*=[[:space:]]*"\(.*\)".*$/\1/')
 
                 if [ "$BEFORE_VERSION" != "$AFTER_VERSION" ]; then
-                    BODY+="\n- File: $FILE\n  Version changed from $BEFORE_VERSION to $AFTER_VERSION"
                     BODY+="\n| $FILE | $MOD_NAME | $BEFORE_VERSION → $AFTER_VERSION | $BEFORE_HASH → $AFTER_HASH |"
                 fi
             fi
