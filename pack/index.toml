@@ -145,7 +145,7 @@ metafile = true
 
 [[files]]
 file = "mods/better-stats.pw.toml"
-hash = "dea1a285520fd0c2929c8da255c09c2671211d8d672ae19a6aa4663f914a0089"
+hash = "f5792a873f8346beb70094c3f79f9cf85d1d5e1e54ba1fc9332ccb981140b835"
 metafile = true
 
 [[files]]
@@ -175,7 +175,7 @@ metafile = true
 
 [[files]]
 file = "mods/compact-chat.pw.toml"
-hash = "806d01e9d578e619dfad0e14301ab71c05a0fd381cd5bcb10a5aecfb9c408698"
+hash = "4c3d20db5afdfe339c40b3853802d9d92a29cde3544585c51a03f8742f9eedb1"
 metafile = true
 
 [[files]]
@@ -220,7 +220,7 @@ metafile = true
 
 [[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "daf2a7408eeeaf8439527b153d24f4ee60865d8e3e7b2e4e05d4d56ce0b1797f"
+hash = "d1ed35943d45fee289113bb614b24382b949dfadad1d7dc786d4356cb7887baa"
 metafile = true
 
 [[files]]
@@ -240,17 +240,17 @@ metafile = true
 
 [[files]]
 file = "mods/immediatelyfast.pw.toml"
-hash = "c4afda1d505225ad18e689ded06f0ed170dec2ea5e6c9621277b565d0fc338b8"
+hash = "b411b04e1dace15c7fc1465bb161c8e621750b1577282e0918f956212a57e864"
 metafile = true
 
 [[files]]
 file = "mods/indium.pw.toml"
-hash = "a81a6caaf787401a7a32dceee38e1d3f67ee6d747fb8fd7e38950b9c220e0c92"
+hash = "e416b18eebf514dea2014cf5c7fd3ee8493934a0b4e937509f15172ad271fde2"
 metafile = true
 
 [[files]]
 file = "mods/iris.pw.toml"
-hash = "61fc4926a5d915dd8e52dce0c906b100f0d3c72ac91008c2a90c88abe22a3bf0"
+hash = "7169f560465ba70f204d3c4189cf3d1faef8ae6cf3dc063733a4d53f612a4d94"
 metafile = true
 
 [[files]]
@@ -330,12 +330,12 @@ metafile = true
 
 [[files]]
 file = "mods/sodium-extra.pw.toml"
-hash = "3468e6d21d74a3f4804c08638201ca3e01a36ab546732b0b6748610175d86a95"
+hash = "f7c09e537f9db67804dd7df6b8ba3a0cfb63429ad992a99e8f8faba33187ded2"
 metafile = true
 
 [[files]]
 file = "mods/sodium.pw.toml"
-hash = "b9c753259c8205f4e3b614ff637095ee16cec64d48a9e08453bfd94aba3bda04"
+hash = "5e73967368d47038c38dc52fa298b45603fbe6baf2608f171638ff767178ad9a"
 metafile = true
 
 [[files]]
@@ -365,7 +365,7 @@ metafile = true
 
 [[files]]
 file = "mods/viafabric.pw.toml"
-hash = "3383fd41ab1fe7aba9b3ee1aa8025883f894158d0fa4a59a6f28d33e2559e922"
+hash = "4d6f9588cee5896bbf0031bd48ce89221abf351534e74d64ed49a52d4f348dee"
 metafile = true
 
 [[files]]
@@ -380,7 +380,7 @@ metafile = true
 
 [[files]]
 file = "mods/worldedit.pw.toml"
-hash = "4057c0fdb25404da099b5cf257bf20a4f14ec2d9f94be425104eb59974a54c80"
+hash = "35c8354352841d4c01efb4989fb33a0d97fe45a6252db79ef5ad94319a842053"
 metafile = true
 
 [[files]]
@@ -395,7 +395,7 @@ metafile = true
 
 [[files]]
 file = "mods/xaeros-world-map.pw.toml"
-hash = "c3ca74d02924618a37ea48c154affba1cc3c7835c7336f12056fb487137abf5e"
+hash = "c8cf868d94b1adc67c337f2266cadc8a91a8181aec83483cb200d2430f6523a6"
 metafile = true
 
 [[files]]
@@ -414,7 +414,7 @@ hash = "7896d228993ecebb09c9a84a6a7cbd47823d06af6a1aae6e92d9b2e2fbf0610b"
 
 [[files]]
 file = "shaderpacks/bsl-shaders.pw.toml"
-hash = "aa9dc0d84028c1f3172219af7edd55590f5c98a69ef41dc72a2f2c57fc4de704"
+hash = "68b79902d98bc38e4705b621dcc54321e35742f696b462070d457cf7156d7921"
 metafile = true
 
 [[files]]
