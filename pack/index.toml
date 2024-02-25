@@ -205,7 +205,7 @@ metafile = true
 
 [[files]]
 file = "mods/dynamic-fps.pw.toml"
-hash = "8df3ff0104f968c35ddfe2bfaedbaab380a1f5a615e95de876d2c95ec7aad960"
+hash = "227a4d80e9ce3790e147041f0e85a3a427c393cd9043802b180f36cbd8829ca2"
 metafile = true
 
 [[files]]
@@ -395,7 +395,7 @@ metafile = true
 
 [[files]]
 file = "mods/xaeros-world-map.pw.toml"
-hash = "c8cf868d94b1adc67c337f2266cadc8a91a8181aec83483cb200d2430f6523a6"
+hash = "32e5438512b7e4c4a4e2fb6346a00e4346702bbea3a0030a108eecb3f7e3f261"
 metafile = true
 
 [[files]]
